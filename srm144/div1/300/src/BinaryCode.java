@@ -19,7 +19,7 @@ public class BinaryCode
 
            p.append(firstDigit);
 
-           for(int i = 0 ; i < messageLength; i++)
+           for(int i = 0 ; i < messageLength -1; i++)
            {
                    int encodedDigit = Character.getNumericValue(q.charAt(i));
                    if ( i == 0 )
@@ -43,12 +43,47 @@ public class BinaryCode
 public static void main(String[] args) {
    // TODO code application logic here
           BinaryCode bc = new BinaryCode();
-/*   String[] decoded = bc.decode("123210122");
-   System.out.println("Decoded String with 0 : " + decoded[0]);
-   System.out.println("Decoded String with 0 : " + decoded[1]);*/
-          String[] decoded = bc.decode("3");
-          System.out.println("Decoded String with 0 : " + decoded[0]);
-          System.out.println("Decoded String with 0 : " + decoded[1]);
+		   String[] decoded = bc.decode("123210122");
+
+           System.out.println("\n123210122:");
+           for(String s : decoded)
+               System.out.println(s);
+          
+           
+		   decoded = bc.decode("11");
+
+           System.out.println("\n11:");
+           for(String s : decoded)
+               System.out.println(s);
+          
+           
+		   decoded = bc.decode("22111");
+
+           System.out.println("\n22111:");
+           for(String s : decoded)
+               System.out.println(s);
+          
+           
+		   decoded = bc.decode("123210120");
+
+           System.out.println("\n123210120:");
+           for(String s : decoded)
+               System.out.println(s);
+          
+           
+		   decoded = bc.decode("3");
+
+           System.out.println("\n3:");
+           for(String s : decoded)
+               System.out.println(s);
+          
+           
+		   decoded = bc.decode("12221112222221112221111111112221111");
+
+           System.out.println("\n12221112222221112221111111112221111:");
+           for(String s : decoded)
+               System.out.println(s);
+          
 }
 }
 
